@@ -35,12 +35,6 @@ app.use(express.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {res.json({ message: "Welcome to BookStore application." });});
 
-// Import the auth routes
-const authRoutes = require('./app/routes/auth.routes'); // Adjust the path as necessary
-
-// Use Auth Routes
-app.use('/api', authRoutes);
-
 require("./app/routes/product.routes")(app);
 require("./app/routes/category.routes")(app);
 require("./app/routes/user.routes")(app);
